@@ -2,6 +2,11 @@
 @use './assets/styles/partials/mixins' as *;
 @use './assets/styles/partials/fonts' as *;
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     font-family: $font-family-spartan;
