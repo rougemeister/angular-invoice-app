@@ -1,5 +1,18 @@
 <div class="toggler-container">
-    <button class="themeToggler" >
-        <img src="../../../../assets/images/icon-moon.svg" alt="moon" />
+    <button class="themeToggler" (click)="toggleTheme()">
+        <!-- Show sun icon when in dark mode (to indicate switching to light) -->
+        <img 
+            *ngIf="isDarkMode" 
+            class="sun-icon" 
+            src="../../../../assets/images/icon-sun.svg" 
+            alt="sun" 
+        />
+        <!-- Show moon icon when in light mode (to indicate switching to dark) -->
+        <img 
+            *ngIf="!isDarkMode" 
+            class="moon-icon" 
+            src="../../../../assets/images/icon-moon.svg" 
+            alt="moon" 
+        />
     </button>
 </div>
