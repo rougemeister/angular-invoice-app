@@ -1,0 +1,40 @@
+@use '../../../../assets/styles/partials/variables' as *;
+@use '../../../../assets/styles/partials/mixins' as *;
+
+header {
+    height: 72px;
+    background-color: $dark-100;
+    width: 100%;
+    @include flex(row, space-between);
+}
+.right {
+    @include flex(row);
+    height: 100%;
+}
+
+
+
+@media screen and (min-width: 768px) {
+    header {
+        height: 80px;
+    }
+    
+}
+@media screen and (min-width: 1024px) {
+    header {
+      height: 100vh;
+      flex-direction: column;
+      justify-content: space-between;
+      border-top-right-radius: 20px;
+      .right {
+        @include flex(column);
+        width: 100%;
+        height: 207px;
+    }
+    
+    }
+
+  
+  
+}
+
