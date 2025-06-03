@@ -1,0 +1,17 @@
+@use '../assets/styles/partials/mixins' as *;   
+
+
+.main-container {
+    // height: 100vh;
+    @include flex(column);
+}
+
+
+@media screen and (min-width: 1024px) { 
+    .main-container{
+        @include flex(row)
+    }
+    .page {
+        flex-grow: 1;
+    }
+}

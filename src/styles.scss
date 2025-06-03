@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+@use './assets/styles/partials/variables' as *;
+@use './assets/styles/partials/mixins' as *;
+@use './assets/styles/partials/fonts' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family-spartan;
+    color:$color-text;
+}
+
+h1, h2, h3, h4 {
+    font-weight: $font-weight-bold;
+    color: $header-text;
+}
+
+.description {
+    color: $gray-300; 
+}
+
+
+.dark-mode {
+    background-color: $dark-bg;
+    color: $dark-mode-text;
+
+    h1, h2, h3, h4 {
+        color: $dark-mode-header;
+    }
+
+    .description {
+        color: $gray-200;
+    }
+}
