@@ -1,0 +1,10 @@
+@for(invoice of invoices; track invoice.id) {
+
+    
+  <div class="invoice-item">
+    <h3>Invoice #{{ invoice.id }}</h3>
+    <p>Date: {{ invoice}}</p>
+    <p>Total: {{ invoice.total }}</p>
+    <button>View Details</button>
+  </div>
+}
