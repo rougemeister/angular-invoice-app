@@ -1,0 +1,102 @@
+@use '../../../assets/styles/partials/mixins' as *;
+@use '../../../assets/styles/partials/variables' as *;
+
+.id-container {
+    display: flex;
+}
+
+.invoice-grid {
+  @include flex(column, center, start, wrap, 16px);
+}   
+
+.invoice {
+    @include flex(column, center, stretch, nowrap, 24px);
+    width: 100%;
+    padding: 24px;
+    height: 134px;
+    border-radius: 8px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
+    .header {
+        @include flex(row, space-between, center);
+    }
+    .details {
+        @include flex(row, space-between, center);
+        .data-amount-wrapper{
+            @include flex(column, center, start, nowrap, 12px);
+        }
+        .status {
+            @include flex(row, center, center, nowrap, 8px);
+            width: 104px;
+            height: 40px;
+            border-radius: 8px;
+            font-weight: bold;
+            
+            .round {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                
+            }
+            .paid{
+                background-color: #33D69F;
+                
+            }
+            .draft {
+                background-color: #373b53;
+            }
+            .pending {
+                background-color: #FF8F00;
+            }
+
+            
+        }
+
+
+        .paid{
+            background-color:  #33d6a017;
+            color: #33D69F;
+        }
+        .draft {
+            background-color: #373b531c;
+            color: #373b53;
+        }
+        .pending {
+            background-color: #ff910017;
+            color: #FF8F00;
+        }
+
+        
+    }
+
+}
+
+
+
+@media  screen and (min-width: 768px) {
+ 
+.invoice {
+    @include flex(row, start, center, nowrap, 28px);
+    width: 100%;
+    padding: 24px;
+    height: 72px;
+    border-radius: 8px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
+    .header {
+        flex-direction: row;
+        gap: 28px;
+    }
+    .details {
+        @include flex(row, start, center);
+        .data-amount-wrapper{
+            @include flex(row, space-between,center, nowrap, 12px);
+        }
+        .status {
+            @include flex(row, center, center, nowrap, 8px);
+            width: 104px;
+            height: 40px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+    }
+    
+}}

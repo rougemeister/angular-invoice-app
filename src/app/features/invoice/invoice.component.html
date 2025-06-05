@@ -1,10 +1,30 @@
-@for(invoice of invoices; track invoice.id) {
 
-    
-  <div class="invoice-item">
-    <h3>Invoice #{{ invoice.id }}</h3>
-    <p>Date: {{ invoice}}</p>
-    <p>Total: {{ invoice.total }}</p>
-    <button>View Details</button>
-  </div>
+<div class="invoice-page-container">
+    <nav></nav>
+<div class="invoice-grid">
+@for(invoice of invoiceData; track invoice.id) {
+<div class="invoice">
+   <div class="header">
+    <div class="id-container"><span>#</span><h3>{{invoice.id}}</h3></div>
+    <p class="name">{{invoice.clientName}}</p>
+   </div>
+   <div class="details">
+   <div class="data-amount-wrapper">
+     <p class="date">Due {{invoice.paymentDue}}</p>
+     <h3 class="amount">£{{invoice.total}}</h3>
+   </div>
+   <div>
+    @if(invoice.status === 'paid'){
+        <div class="status paid"><div class="round paid"></div>Paid</div>
+    }@else if (invoice.status === 'pending') {
+        <div class="status pending"><div class="round pending"></div>Pending</div>
+    }@else if (invoice.status === 'draft') {
+        <div class="status draft"><div class="round draft"></div>Draft</div>
+    } 
+   </div>
+</div>
+</div>
 }
+
+</div>
+</div>

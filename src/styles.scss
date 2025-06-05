@@ -11,10 +11,13 @@
 body {
     font-family: $font-family-spartan;
     color:$color-text;
+    background-color: $light-bg;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 
 }
-
+.invoice {
+    background-color: $white;
+}
 h1, h2, h3, h4 {
     font-weight: $font-weight-bold;
     color: $header-text;
@@ -36,6 +39,10 @@ h1, h2, h3, h4 {
     .description {
         color: $gray-200;
     }
+    .invoice {
+        background-color: $dark-100;
+    }
+
 
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
