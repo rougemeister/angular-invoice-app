@@ -1,0 +1,7 @@
+
+@use '../../../../../assets/styles/partials/mixins' as *;
+@use '../../../../../assets/styles/partials/variables' as *;
+button {
+    background-color: $accent-red;
+    width: 90px;
+}

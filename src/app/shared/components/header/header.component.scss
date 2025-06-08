@@ -22,7 +22,7 @@ header {
 }
 @media screen and (min-width: 1024px) {
     header {
-      height: 100vh;
+      height: 100%;
       flex-direction: column;
       justify-content: space-between;
       border-top-right-radius: 20px;

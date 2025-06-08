@@ -1,0 +1,7 @@
+@use '../../../../../assets/styles/partials/variables' as *;
+
+
+button {
+    background-color: $primary-100;
+    width: 150px;
+}
