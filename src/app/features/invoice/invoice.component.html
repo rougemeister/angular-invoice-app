@@ -6,12 +6,12 @@
             <div class="invoice-count">There are {{invoices.length}} invoices</div>
         </div>
         <div class="right-nav-items">
-            <app-filter></app-filter>
+            <app-filter (filterChanged)="applyFilter($event)"></app-filter>
             <app-add-new-button></app-add-new-button> 
         </div>
     </nav>
 <div class="invoice-grid">
-@for(invoice of invoices; track invoice.id) {
+@for(invoice of filteredInvoices; track invoice.id) {
 <div class="invoice" (click)="navigateToDetails(invoice.id)">
    <div class="header">
     <div class="id-container"><span>#</span><h3>{{invoice.id}}</h3></div>
