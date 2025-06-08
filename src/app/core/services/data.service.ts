@@ -12,13 +12,17 @@ export class DataService {
   constructor(private http: HttpClient) {}
 
   async getInvoices(): Promise<Invoice[]> {
-    return await firstValueFrom(this.http.get<Invoice[]>(this.dataUrl));
+      return await firstValueFrom(this.http.get<Invoice[]>(this.dataUrl));
   }
+
+  async getInvoiceById(id: string): Promise<Invoice | null> {
+    try {
+      const invoices = await this.getInvoices();
+      return invoices.find(invoice => invoice.id === id) || null;
+    } catch (error) {
+      console.error('Error fetching invoice by ID:', error);
+      throw error;
+    }
+  }
+
 }
-
-
-
-
-
-
-

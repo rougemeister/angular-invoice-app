@@ -1,0 +1,37 @@
+@use '../../../../../assets/styles/partials/mixins' as *;
+@use '../../../../../assets/styles/partials/variables' as *;
+
+
+button {
+    background-color: $primary-100;
+    color: $white;
+    @include flex(row, center, center, nowrap, 8px);
+    height: 48px;
+    width: 90px;;
+    .add {
+        background-color: $white;
+        height: 32px;
+        width: 32px;
+        @include flex(row, center, center);
+        
+        border-radius: inherit;
+    }
+    .desktop-text {
+        display: none;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    button {
+        width: 150px;
+        gap: 24px;
+        .desktop-text {
+            display: block;
+        }
+        .mobile-text {
+            display: none;
+        }
+    }
+    
+}

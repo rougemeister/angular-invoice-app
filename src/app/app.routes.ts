@@ -8,7 +8,7 @@ export const routes: Routes = [
     { path: 'invoices', component: InvoiceComponent },
     { path: 'new-invoice', component: NewInvoiceFormComponent },
     { path: 'edit-invoice/:id', component: NewInvoiceFormComponent },
-    { path: 'invoice-details/:id', component: InvoiceDetailsComponent  },
+    { path: 'invoice/:id', component: InvoiceDetailsComponent  },
     { path: 'edit-invoice-details/:id', component: EditInvoiceFormComponent},
     { path: '**', redirectTo: '/invoices' }
 ];

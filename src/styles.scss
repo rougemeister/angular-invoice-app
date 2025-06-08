@@ -12,15 +12,30 @@ body {
     font-family: $font-family-spartan;
     color:$color-text;
     background-color: $light-bg;
+    height: 100vh;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 
 }
-.invoice {
+
+.payment-details {
+    background-color: $light-bg;
+}
+.invoice,
+.status-container,
+.invoice-details,
+.filter-options {
     background-color: $white;
 }
 h1, h2, h3, h4 {
     font-weight: $font-weight-bold;
     color: $header-text;
+}
+
+button {
+    font-family: $font-family-spartan;
+    font-weight: $font-weight-bold;
+    border: none;
+    border-radius: 100px;
 }
 
 .description {
@@ -39,7 +54,12 @@ h1, h2, h3, h4 {
     .description {
         color: $gray-200;
     }
-    .invoice {
+    .invoice,
+    .status-container,
+    .invoice-details,
+    .payment-details,
+    .filter-options {
+        
         background-color: $dark-100;
     }
 

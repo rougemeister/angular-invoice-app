@@ -16,3 +16,7 @@
     gap: $gap;
   }
 }
+
+@mixin border-radius($radius: 8px) {
+  border-radius: $radius;
+}

@@ -1,9 +1,18 @@
 
 <div class="invoice-page-container">
-    <nav></nav>
+    <nav>
+        <div class="counter">
+            <h2>Invoices</h2>
+            <div class="invoice-count">There are {{invoices.length}} invoices</div>
+        </div>
+        <div class="right-nav-items">
+            <app-filter></app-filter>
+            <app-add-new-button></app-add-new-button> 
+        </div>
+    </nav>
 <div class="invoice-grid">
-@for(invoice of invoiceData; track invoice.id) {
-<div class="invoice">
+@for(invoice of invoices; track invoice.id) {
+<div class="invoice" (click)="navigateToDetails(invoice.id)">
    <div class="header">
     <div class="id-container"><span>#</span><h3>{{invoice.id}}</h3></div>
     <p class="name">{{invoice.clientName}}</p>
