@@ -2,13 +2,10 @@
 
 
 .main-container {
-    // height: 100vh;
+    height: 100vh;
     @include flex(column);
 }
 
-.page {
-    padding: 24px;
-}
 
 
 @media screen and (min-width: 1024px) { 

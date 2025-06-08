@@ -1,5 +1,4 @@
 <div class="invoice-details-container">
-   
     <button class="back-button" (click)="goBack()">
         <img src="../../../assets/images/icon-arrow-left.svg" alt="back arrow">
         <h4>Go back</h4>
@@ -13,7 +12,26 @@
     }@else if (invoice?.status === 'draft') {
         <div class="status draft"><div class="round draft"></div>Draft</div>
     } 
+    
     </div>
+    <div class="status-container desktop">
+        <div class="status-wrapper">
+            <p>Status</p>
+            @if(invoice?.status === 'paid'){
+             <div class="status paid"><div class="round paid"></div>Paid</div>
+         }@else if (invoice?.status === 'pending') {
+             <div class="status pending"><div class="round pending"></div>Pending</div>
+         }@else if (invoice?.status === 'draft') {
+             <div class="status draft"><div class="round draft"></div>Draft</div>
+         } 
+        </div>
+      
+     <div class="buttons">
+        <app-edit-button/>
+        <app-delete-button/>
+        <app-mark-as-paid/>
+     </div>
+     </div>
     <div class="invoice-details">
         <div class="invoice-details-desc">
             <div class="sender-details">
@@ -67,3 +85,9 @@
          
         </div>
 </div>
+</div>
+<footer>
+    <app-edit-button [invoiceId]="invoiceId || ''"/>
+    <app-delete-button/>
+    <app-mark-as-paid/>
+</footer>

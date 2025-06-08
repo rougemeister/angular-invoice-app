@@ -2,6 +2,7 @@
 @use '../../../assets/styles/partials/mixins' as *;
 
 .invoice-details-container {
+    padding: 24px;
     height: 100%;
     @include flex (column, center, start, nowrap, 16px);
     button {
@@ -11,6 +12,10 @@
         margin-bottom: 16px;
         @include flex(row, center, center, nowrap, 28px);
         
+    }
+
+    .status-container.desktop {
+        display: none;
     }
 
     .status-container {
@@ -85,4 +90,36 @@
     }
 
 
+}
+
+
+footer {
+    width: 100%;
+    height: 91px;
+    @include flex(row, center, center, nowrap, 8px);
+  
+}
+
+@media screen and (min-width: 768px) {
+    .invoice-details-container{
+   
+    .status-container.desktop {
+        display: flex;
+    }
+
+    .status-container {
+        display: none
+    }
+
+    .status-wrapper{
+        @include flex(row, center, center, nowrap, 16px);
+    }
+    .buttons {
+        @include flex(row, center, center, nowrap, 8px);
+    }
+}
+   footer {
+    display: none;
+   }
+    
 }

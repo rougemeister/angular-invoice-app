@@ -2,7 +2,10 @@ import { Component, OnInit,inject,Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Invoice } from '../../core/models/model';
 import { DataService } from '../../core/services/data.service';
-import { DatePipe, CurrencyPipe } from '@angular/common'; // Import needed here
+import { DatePipe, CurrencyPipe } from '@angular/common';
+import { EditButtonComponent } from "../../shared/components/buttons/edit-button/edit-button.component"; // Import needed here
+import { DeleteButtonComponent } from '../../shared/components/buttons/delete-button/delete-button.component';
+import { MarkAsPaidComponent } from '../../shared/components/buttons/mark-as-paid/mark-as-paid.component';
 
 
 
@@ -10,7 +13,7 @@ import { DatePipe, CurrencyPipe } from '@angular/common'; // Import needed here
 @Component({
   selector: 'app-invoice-details',
   standalone: true,
-  imports: [DatePipe, CurrencyPipe],
+  imports: [DatePipe, CurrencyPipe, EditButtonComponent, DeleteButtonComponent, MarkAsPaidComponent],
   templateUrl: './invoice-details.component.html',
   styleUrl: './invoice-details.component.scss'
 })
